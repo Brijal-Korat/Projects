@@ -165,7 +165,7 @@ function App() {
 
       {/* Expense List Section */}
       <div className="card shadow mb-4">
-        <div className="card-header bg-warning text-white text-center">
+        <div className="card-header bg-info text-white text-center">
           <h4>Expense List</h4>
         </div>
         <div className="card-body">
@@ -183,7 +183,9 @@ function App() {
                   <td>{e.expName}</td>
                   <td>${e.expBudget}</td>
                   <td>
-                    <button className="btn btn-sm btn-danger" onClick={() => handleDeleteExpense(index)}>Delete</button>
+                    <button className="btn btn-outline-danger" onClick={() => handleDeleteExpense(index)}>Delete</button>
+                    &nbsp;&nbsp;
+                    <button className="btn btn-outline-warning">Edit</button>
                   </td>
                 </tr>
               ))}
