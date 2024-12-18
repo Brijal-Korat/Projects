@@ -59,16 +59,23 @@ function App() {
   //   alert("Expense deleted!");
   // }
 
+  const handleMultipleDelete = () => {
+    const updatedExpenses = allExpenses.filter((_, id) => id !== id);
+    localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+    setAllExpenses(updatedExpenses);
+    alert("All Expenses deleted successfully..!");
+  }
+
   const handleDeleteExpense = (id) => {
     // Filter out the expense by index
     let d = allExpenses.filter((_, index) => index !== id);
-  
+
     // Update localStorage and state
     localStorage.setItem("expenses", JSON.stringify(d));
-    alert("Expense deleted!");
+    alert("Expense deleted successfully..!");
     setAllExpenses(d);
   };
-  
+
 
   return (
     <div className="container my-5">
@@ -167,6 +174,9 @@ function App() {
       <div className="card shadow mb-4">
         <div className="card-header bg-info text-white text-center">
           <h4>Expense List</h4>
+        </div>
+        <div className="d-flex align-items-center justify-content-end">
+          <button className="btn btn-danger me-3 mt-3" onClick={() => handleMultipleDelete()}>All Delete</button>
         </div>
         <div className="card-body">
           <table className="table table-bordered text-center" style={{ width: "100%" }}>
