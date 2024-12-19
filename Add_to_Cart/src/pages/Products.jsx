@@ -22,7 +22,7 @@ const Products = () => {
     },
     {
       id: 4,
-      name: "Hoodie",
+      name: "Casual",
       price: 250
     }
   ]
@@ -50,7 +50,7 @@ const Products = () => {
                   <td>{pr.name}</td>
                   <td>{pr.price}</td>
                   <td><input type="number" defaultValue={1} /></td>
-                  <td><button>Add</button></td>
+                  <td><button>Add to cart</button></td>
                 </tr>
               )
             })
